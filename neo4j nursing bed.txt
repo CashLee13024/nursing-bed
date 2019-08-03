@@ -1,0 +1,108 @@
+-----Load nodes from csv
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/structures.csv" AS row 
+CREATE (s:ProductStructure) 
+SET s = row
+
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/movement.csv" AS row 
+CREATE (m:Movement) 
+SET m = row
+
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/behaviors.csv" AS row 
+CREATE (b:Behavior) 
+SET b = row
+
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/services.csv" AS row 
+CREATE (s:ServiceComponent) 
+SET s = row
+
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/activities.csv" AS row 
+CREATE (a:Activity) 
+SET a = row
+
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/contexts.csv" AS row 
+CREATE (c:Context) 
+SET c = row
+
+(checked)
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/functions.csv" AS row 
+CREATE (f:Function) 
+SET f = row
+
+-----Load edges from csv
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/structuresANDstructures.csv" AS row
+
+MATCH (s1:ProductStructure{structure_name: row.structure1_set}),(s2:ProductStructure{structure_name: row.structure2_set})
+
+MERGE (s1)-[ss:StructureAndStructure {StrStrRelID: row.structure_relation_id, ConnectionType: row.Connection}]->(s2)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/structuresANDmovements.csv" AS row
+
+MATCH (s:ProductStructure{structure_name: row.structure_set}),(m:Movement{movement_name: row.movement_NP})
+
+MERGE (s)-[sm:StructureHasMovement {StrMovRelID: row.structure_movement_id, MovementType: row.movement_VP}]->(m)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/movementsANDbehaviors.csv" AS row
+
+MATCH (m:Movement{movement_name: row.movement_set}),(b:Behavior{behavior_name: row.behavior_NP})
+
+MERGE (m)-[mb:MovementInBehavior {MovBehRelID: row.movement_behaviour_id, ComposeType: row.behavior_VP}]->(b)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/servicesANDactivity.csv" AS row
+
+MATCH (s:ServiceComponent{service_name: row.service_set}),(a:Activity{activity_name: row.activity_NP})
+
+MERGE (s)-[sa:ServiceHasActivity {SerActRelID: row.service_activity_id, ActivityType: row.activity_VP}]->(a)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/activitiesANDbehaviors.csv" AS row
+
+MATCH (a:Activity{activity_name: row.activity_set}),(b:Behavior{behavior_name: row.behavior_NP})
+
+MERGE (a)-[ab:ActivityInBehavior {ActBehRelID: row.activity_behaviour_id, ComposeType: row.behavior_VP}]->(b)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/servicesANDstructures.csv" AS row
+
+MATCH (s:ServiceComponent{service_name: row.service_set}),(p:ProductStructure{structure_name: row.structure_set})
+
+MERGE (s)-[sp:ServiceRelatedStructure {SerStrRelID: row.service_structure_id, Relevance: row.relevance}]->(p)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/structuresANDcontexts.csv" AS row
+
+MATCH (p:ProductStructure{structure_name: row.structure_set}),(c:Context{context_name: row.context_set})
+
+MERGE (p)-[pc:StructureUnderContext {StrConRelID: row.structure_context_id, Operation: row.operation}]->(c)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/servicesANDcontexts.csv" AS row
+
+MATCH (s:ServiceComponent{service_name: row.service_set}),(c:Context{context_name: row.context_set})
+
+MERGE (s)-[sc:ServiceUnderContext {SerConRelID: row.service_context_id, Operation: row.operation}]->(c)
+
+(checked)
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CashLee13024/nursing-bed/master/behaviorsANDfunctions.csv" AS row
+
+MATCH (b:Behavior{behavior_name: row.behavior_set}),(f:Function{function_name: row.function_NP})
+
+MERGE (b)-[bf:BehaviorInFunction {BehFunRelID: row.behavior_function_id, Achieve: row.behavior_VP}]->(f)
