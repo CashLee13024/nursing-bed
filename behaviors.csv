@@ -1,12 +1,12 @@
-﻿behavior_id,behavior_name,behavior_type,,behavior_name_English
-1,用户姿态,使用者数据,,User gesture
-2,用户生命体征,使用者数据,,User vital signs
-3,床体位置,使用者数据,,Bed position
-4,运动信息,使用者数据,,Exercise information
-5,障碍警告,使用过程数据,,Obstacle warning
-6,语音指令,使用者数据,,Voice command
-7,体温异常警告,使用过程数据,,Temperature abnormality
-8,排泄异常警告,使用过程数据,,Excretion warning
-9,姿态异常警告,使用过程数据,,Abnormal posture
-10,设备异常警告,使用过程数据,,Device exception
-11,利益相关者,使用者,,Stakeholders
+﻿behavior_id,behavior_name,behavior_type,behavior_name_English
+1,用户姿态,使用者数据,User gesture
+2,用户生命体征,使用者数据,User vital signs
+3,床体位置,使用者数据,Bed position
+4,运动信息,使用者数据,Exercise information
+5,障碍警告,使用过程数据,Obstacle warning
+6,语音指令,使用者数据,Voice command
+7,体温异常警告,使用过程数据,Temperature abnormality
+8,排泄异常警告,使用过程数据,Excretion warning
+9,姿态异常警告,使用过程数据,Abnormal posture
+10,设备异常警告,使用过程数据,Device exception
+11,利益相关者,使用者,Stakeholders
