@@ -1,0 +1,22 @@
+﻿context_id,context_name,context_category,context_name_english
+1,时间,物理情境,Time
+2,温度,物理情境,Temperature
+3,湿度,物理情境,Humidity
+4,位置,物理情境,Position
+5,声音,物理情境,Sound
+6,年龄,用户情境,Age
+7,性别,用户情境,Gender
+8,地址,用户情境,Address
+9,家庭状况,用户情境,Family status
+10,联系方式,用户情境,Contact details
+11,病史,用户情境,Medical history
+12,健康状况,用户情境,Health status
+13,偏好,用户情境,Preference
+14,功率,运行情境,Power
+15,标定,运行情境,Calibration
+16,软件版本,运行情境,Software version
+17,维修记录,运行情境,Maintenance records
+18,更换记录,运行情境,Replacement record
+19,紧急状况,社会情境,Emergency
+20,通信状况,社会情境,Communication status
+21,异常状况,社会情境,Abnormal condition

@@ -1,0 +1,12 @@
+﻿service_id,service_name,service_name_English
+1,语音信号处理,Speech signal processing
+2,障碍物检测,Obstacle detection
+3,生理信息监测,Vital signs monitoring
+4,紧急呼救服务,Emergency call
+5,远程通信服务,Remote consultation
+6,修理检测,Repair inspection
+7,更换检测,Replacement detection
+8,升级检测,Upgrade detection
+9,电机启动自检,Motor startup self-test
+10,芯片启动自检,Chip startup self-test
+11,传感器调校,Sensor calibration

@@ -1,0 +1,20 @@
+﻿movement_id,movement_name,movement_type,movement_source,movement_name_English
+1,24V直流电,能源,环境数据,24V DC
+2,36V直流电,能源,环境数据,36V DC
+3,220V交流电,能源,环境数据,220V AC
+4,5V直流电,能源,环境数据,5V DC
+5,转速,物理量,传感数据,Rotating speed
+6,转矩,物理量,传感数据,Torque
+7,光照,物理量,环境数据,Illumination
+8,腿板位置,位置数据,传感数据,Leg board position
+9,背板位置,位置数据,传感数据,Back board position
+10,床板位置,位置数据,传感数据,Bed board position
+11,车轮转角,位置数据,传感数据,Wheel corner
+12,体温,生理信息,传感数据,Body temperature
+13,排泄情况,生理信息,传感数据,Excretion
+14,距离,物理量,传感数据,Distance
+15,障碍物,位置数据,环境数据,Obstacle
+16,语音信号,信号,用户产生,Voice signal
+17,背部姿态,生理信息,用户产生,Back posture
+18,上身姿态,生理信息,用户产生,Upper body posture
+19,腿部姿态,生理信息,用户产生,Leg posture

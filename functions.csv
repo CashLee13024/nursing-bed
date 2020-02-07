@@ -1,0 +1,8 @@
+﻿function_id,function_name,function_description,function_name_English
+1,无压迫抬背,提升背板,Lift the back without pressure
+2,中轴线翻身,左右翻转床板,Turn over
+3,独立抬腿,提升或下降腿板,Lift leg
+4,语音控制,识别用户语音指令,Voice control
+5,远程通信,向利益相关者发送相关信息,Remote communication
+6,状态监测,监测产品运行和用户使用状态,Condition monitoring
+7,人机交互,显示产品和用户使用状态,Human-computer interaction

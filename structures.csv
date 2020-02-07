@@ -1,0 +1,29 @@
+﻿structure_id,structure_name,structure_name_English
+1,24V直流稳压电源,24V DC regulated power supply
+2,36V直流稳压电源,36V DC regulated power supply
+3,可调稳压模块,Adjustable voltage regulator module
+4,直流无刷轮毂电机,DC brushless hub motor
+5,直流无刷伺服驱动器,DC brushless servo driver
+6,车轮,Wheel
+7,LED灯,LED lights
+8,STM32主控芯片,STM32 main control chip
+9,STM32中继芯片,STM32 relay chip
+10,蓝牙通讯模块,Bluetooth communication module
+11,按钮开关,Power switch button
+12,继电器,Relay
+13,温度传感器,Temperature Sensor
+14,湿度传感器,Humidity Sensor
+15,语音识别模块,Speech recognition module
+16,红外测距传感器,Infrared ranging sensor
+17,麦克风,microphone
+18,音响,sound
+19,抬背机构,Back actuator
+20,翻身机构,Turning actuator
+21,抬腿机构,Leg actuator
+22,床椅分离机构,Bed and chair separation mechanism
+23,防侧滑机构,Anti-slip mechanism
+24,电动推杆,Electric putter
+25,床板,Bed board
+26,背板,Back board
+27,腿板,Leg board
+28,上位计算机,Microcomputer

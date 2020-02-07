@@ -1,0 +1,9 @@
+﻿activity_id,activity_name,activity_type,activity_name_English
+1,预存指令,信号,Stored instruction
+2,障碍警告,警报,Obstacle warning
+3,生理异常状态,警报,Physiological abnormality
+4,护理人员,使用者,Nursing staff
+5,医生,使用者,Doctor
+6,家属,使用者,Family member
+7,制造商,使用者,Manufacturer
+8,用户,使用者,User
